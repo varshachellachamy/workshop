@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% block body_block %}
+<h1> List of registered Students: </h1>
+
+<ul>
+ {% if student_list %}
+
+{% for student in student_list %}
+
+ <li><a href="{% url 'form:editlist' student.id %}">{{ student.First_Name }} {{ student.Last_Name }}</a></li>
+ {% endfor %}
+{% else %}
+<h3> no students list</h3>
+{% endif %}
+</ul>
+ <a href="/"> <input type="submit" name="submit" value="Form" class="btn btn-info btn-sm"></a>
+
+{% endblock %}

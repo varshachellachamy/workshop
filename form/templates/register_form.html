@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<style>
+    th{
+    font-size:large;
+    }
+    .button{
+    background-color:#acc4ac;
+    border-radius:8%;
+    cursor: pointer;
+    width: 80%;
+    color:black;
+    text-decoration: none;
+    display: inline-block;
+    padding : 10px;
+    }
+</style>
+<body style="text-align:center; background:#dee8c4;">
+<div class="container" >
+    <h1 >Workshop Registration Form</h1>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+    <table align="center" cellpadding="20">
+        <tr>
+            <th>
+                {{ form.as_table }} <!--    render django forms-->
+            </th>
+            <th align="center">
+                <button type="submit" class="button" ><b>SUBMIT</b></button>
+            </th>
+            <th>
+               <a href="details"  class="button">
+                  <b>SHOW DETAILS</b>
+                </a>
+            </th>
+        </tr>
+    </table>
+</form>
+    </div>
+</body>
+</html>
